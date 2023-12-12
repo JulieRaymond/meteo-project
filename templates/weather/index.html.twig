@@ -6,8 +6,10 @@
     <h2>Recherche Météo</h2>
 
     <form method="get" action="{{ path('weather') }}">
-        <label for="city">Entrez le nom de la ville :</label>
-        <input type="text" id="city" name="city" required>
-        <button type="submit">Rechercher</button>
+        <div class="mb-3">
+            <label for="city">Entrez le nom de la ville :</label>
+            <input type="text" id="city" name="city" required>
+            <button type="submit" class="btn btn-primary">Rechercher</button>
+        </div>
     </form>
 {% endblock %}

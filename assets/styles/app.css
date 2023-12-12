@@ -1,3 +1,44 @@
 body {
-    background-color: skyblue;
+    background-color: whitesmoke;
+    margin : 0;
+    padding: 0;
+}
+
+main {
+    text-align: center;
+}
+
+.card {
+    flex: 1 0 calc(33.33% - 10px);
+    margin: 5px;
+    align-items: center;
+    --bs-border-color-translucent : darkgreen;
+}
+
+.card-body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: stretch;
+}
+
+.card-header{
+    margin : 3rem 3rem;
+    background-color: #B0413E;
+    color : white;
+    text-align: center;
+    font-family: "JetBrains Mono", sans-serif;
+    font-size: 28px;
+    border-radius: 10px;
+}
+
+.card-title{
+    margin: 1rem 1rem;
+    text-align: center;
+}
+
+.card-text{
+    margin: 1rem 1rem;
+    text-align: center;
 }

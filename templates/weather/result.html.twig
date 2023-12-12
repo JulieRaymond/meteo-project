@@ -3,8 +3,70 @@
 {% block title %}Résultats Météo{% endblock %}
 
 {% block body %}
-    <h2>Résultats Météo pour {{ weatherData.name }}, {{ weatherData.sys.country }}</h2>
-    <p>Température : {{ weatherData.main.temp }} °C</p>
-    <p>Humidité : {{ weatherData.main.humidity }} %</p>
-    {# Ajoutez d'autres informations météo selon les données retournées par l'API OpenWeatherMap #}
+    <div class="card">
+        <div class="card-header">
+          <h1>Résultats Météo pour {{ weatherData.name }}, {{ weatherData.sys.country }}</h1>
+        </div>
+        <div class="card-body">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Température</h5>
+                    <p class="card-text">{{ weatherData.main.temp }} °C</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Température ressentie</h5>
+                    <p class="card-text">{{ weatherData.main.feels_like }} °C</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Humidité</h5>
+                    <p class="card-text">{{ weatherData.main.humidity }} %</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Vitesse du vent</h5>
+                    <p class="card-text">{{ weatherData.wind.speed }} m/s</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Direction du vent</h5>
+                    <p class="card-text">{{ weatherData.wind.deg }}°</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Couverture nuageuse</h5>
+                    <p class="card-text">{{ weatherData.clouds.all }} %</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Levée du soleil</h5>
+                    <p class="card-text">{{ weatherData.sys.sunrise | date("H:i:s", "Europe/Paris") }}</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Couché du soleil</h5>
+                    <p class="card-text">{{ weatherData.sys.sunset | date("H:i:s", "Europe/Paris") }}</p>
+                </div>
+            </div>
+        </div>
+        {#<div class="card-footer">
+            {{ dump(weatherData) }}
+        </div>#}
+    </div>
+
 {% endblock %}
