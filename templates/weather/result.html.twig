@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Résultats Météo{% endblock %}
+
+{% block body %}
+    <h2>Résultats Météo pour {{ weatherData.name }}, {{ weatherData.sys.country }}</h2>
+    <p>Température : {{ weatherData.main.temp }} °C</p>
+    <p>Humidité : {{ weatherData.main.humidity }} %</p>
+    {# Ajoutez d'autres informations météo selon les données retournées par l'API OpenWeatherMap #}
+{% endblock %}
