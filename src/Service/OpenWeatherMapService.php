@@ -21,6 +21,7 @@ class OpenWeatherMapService
             'query' => [
                 'q' => $city,
                 'appid' => $this->apiKey,
+                'units' => 'metric',
             ],
         ]);
 
